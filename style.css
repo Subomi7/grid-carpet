@@ -1,0 +1,118 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0, auto;
+}
+
+.container {
+  resize: both;
+  overflow: auto;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    'card1 card1 card2 card3 card3'
+    'card1 card1 card4 card5 card5'
+    'card6 card7 card7 card5 card5'
+    'card6 card8 card9 card9 card10';
+}
+
+.card {
+  border: 1px solid black;
+  text-align: center;
+  color: grey;
+}
+
+.centered-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#card1 {
+  grid-area: card1;
+  position: relative;
+  font-size: 2rem;
+  animation-duration: 2s;
+  animation-name: moveRight;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes moveRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100px);
+    }
+  }
+
+#card2 {
+  grid-area: card2;
+  background: blue;
+}
+
+#card3 {
+  grid-area: card3;
+  background: green;
+}
+
+#card4 {
+  grid-area: card4;
+  background: yellow;
+}
+
+#card5 {
+  grid-area: card5;
+  background: rgb(0, 174, 255);
+  animation-duration: 2s;
+  animation-name: fadeIn;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 2;
+    }
+  }
+
+#card6 {
+  grid-area: card6;
+  background: rgb(70, 190, 106);
+}
+
+#card7 {
+  grid-area: card7;
+  background: rgb(192, 84, 21);
+}
+
+#card8 {
+  grid-area: card8;
+  background: rgba(61, 107, 207, 0.445);
+}
+
+#card9 {
+  grid-area: card9;
+  background: rgba(235, 111, 80, 0.466);
+}
+
+#card10 {
+  grid-area: card10;
+  background: rgba(233, 95, 15, 0.733);
+}
+
+img {
+  width: 39rem;
+  height: 359px;
+  object-fit: fill;
+}
